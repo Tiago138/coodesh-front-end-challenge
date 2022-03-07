@@ -17,8 +17,17 @@ function UserModal() {
         className="overlay"
         onClick={() => dispatch(setShowModal(false))}
       ></span>
-      <div className="container__user__modal">
-        <img src={user.picture.large} alt={user.name.first} />
+      <div
+        className="container__user__modal"
+        style={
+          user.gender === "male" ? { color: "#5e81ac" } : { color: "#b48ead" }
+        }
+      >
+        <img
+          src={user.picture.large}
+          alt={user.name.first}
+          className={user.gender === "male" ? "male" : "female"}
+        />
         <h3>
           {user.name.title} {user.name.first} {user.name.last}
         </h3>

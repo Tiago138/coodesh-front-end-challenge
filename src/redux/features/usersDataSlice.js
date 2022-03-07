@@ -19,15 +19,8 @@ const initialState = {
 };
 
 const extraReducers = {
-  [getUsersData.pending]: (state, action) => {
-    state.loading = true;
-  },
   [getUsersData.fulfilled]: (state, action) => {
-    state.loading = false;
     state.usersData = action.payload;
-  },
-  [getUsersData.rejected]: (state, action) => {
-    state.loading = false;
   },
 };
 
