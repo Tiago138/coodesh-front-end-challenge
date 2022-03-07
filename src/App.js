@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import HeaderBar from "./components/HeaderBar";
+import SearchBar from "./components/SearchBar";
+import Table from "./components/Table";
+
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { getUsersData } from "./redux/features/usersDataSlice";
+import UserModal from "./components/UserModal";
 
 function App() {
+  const dispatch = useDispatch();
+  const { showModal } = useSelector((state) => state.usersData);
+
+  useEffect(() => {
+    dispatch(getUsersData());
+  }, []);
+
+  console.log("rendered");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderBar />
+      <SearchBar />
+      <Table />
+      {showModal && <UserModal />}
+    </>
   );
 }
 

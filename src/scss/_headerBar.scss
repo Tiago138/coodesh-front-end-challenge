@@ -1,0 +1,38 @@
+.headerBar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: $nord6;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+
+  .headerLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2e3440;
+
+    img {
+      width: 40px;
+      height: auto;
+    }
+  }
+
+  .headerUserImage {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $nord3;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

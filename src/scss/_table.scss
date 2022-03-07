@@ -1,0 +1,107 @@
+.usersTable {
+  border-collapse: collapse;
+  width: 40em;
+  color: $nord0;
+  background-color: $nord6;
+  border-radius: 10px;
+  margin: 25px auto;
+  //box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
+
+  thead {
+    tr {
+      background: #b48ead;
+      border-radius: 5px;
+      // border-bottom: 1px dashed $nord3;
+
+      td {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 8px;
+        color: #eceff4;
+
+        &:nth-child(1) {
+          border-top-left-radius: 10px;
+        }
+
+        &:nth-last-child(1) {
+          text-align: center;
+          border-top-right-radius: 10px;
+        }
+      }
+
+      .gender {
+        cursor: pointer;
+        transition: color ease-in-out 300ms;
+
+        &:hover {
+          color: #5e81ac;
+
+          svg {
+            fill: #5e81ac;
+          }
+        }
+
+        svg {
+          width: auto;
+          height: 20px;
+          fill: #eceff4;
+          transition: fill ease-in-out 300ms;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 8px;
+
+        &:first-child {
+          width: 160px;
+        }
+
+        &:nth-child(2) {
+          width: 120px;
+        }
+
+        &:nth-child(3) {
+          width: 140px;
+        }
+
+        &:last-child {
+          text-align: center;
+
+          svg {
+            width: 20px;
+            height: auto;
+            fill: $nord3;
+            cursor: pointer;
+            transition: fill ease-in-out 300ms;
+
+            &:hover {
+              fill: #d08770;
+            }
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: $nord4;
+      }
+
+      &:last-child {
+        td {
+          &:first-child {
+            border-radius: 0px 0px 0px 10px;
+          }
+
+          &:last-child {
+            border-radius: 0px 0px 10px 0px;
+          }
+        }
+      }
+    }
+  }
+}

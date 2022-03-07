@@ -1,0 +1,21 @@
+.searchbar {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+
+  input {
+    width: 40em;
+    padding: 10px;
+    color: $nord0;
+    background-color: $nord6;
+    font-weight: 700;
+    border: 1px solid rgba(46, 52, 64, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2),
+      inset 2px 2px 2px rgb(179, 176, 176);
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
