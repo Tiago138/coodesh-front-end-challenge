@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { setFilter } from "../redux/features/usersDataSlice";
 
 function SearchBar() {
-  console.log("rendered searchbar");
   const dispatch = useDispatch();
 
   // Take the input and send to the store to be used to filter the users.

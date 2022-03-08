@@ -1,6 +1,4 @@
 function HeaderBar() {
-  console.log("rendered headerbar");
-
   return (
     <header className="headerBar">
       <div className="headerLogo">
