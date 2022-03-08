@@ -5,12 +5,11 @@
   background-color: $nord6;
   border-radius: 10px;
   margin: 25px auto;
-  //box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
 
   thead {
     tr {
-      background: #b48ead;
+      background: $nord15;
       border-radius: 5px;
       // border-bottom: 1px dashed $nord3;
 
@@ -19,7 +18,7 @@
         font-weight: 600;
         letter-spacing: 1px;
         padding: 8px;
-        color: #eceff4;
+        color: $nord6;
 
         &:nth-child(1) {
           border-top-left-radius: 10px;
@@ -36,17 +35,17 @@
         transition: color ease-in-out 300ms;
 
         &:hover {
-          color: #5e81ac;
+          color: $nord10;
 
           svg {
-            fill: #5e81ac;
+            fill: $nord10;
           }
         }
 
         svg {
           width: auto;
           height: 20px;
-          fill: #eceff4;
+          fill: $nord6;
           transition: fill ease-in-out 300ms;
         }
       }
@@ -81,7 +80,7 @@
             transition: fill ease-in-out 300ms;
 
             &:hover {
-              fill: #d08770;
+              fill: $nord12;
             }
           }
         }
