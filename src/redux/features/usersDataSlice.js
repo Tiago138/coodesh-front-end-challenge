@@ -24,7 +24,7 @@ export const usersDataSlice = createSlice({
     },
     getUser: (state, action) => {
       state.user = state.usersData.results.find(
-        (user) => user.login.uuid == action.payload
+        (user) => user.login.uuid === action.payload
       );
     },
     setShowModal: (state, action) => {
