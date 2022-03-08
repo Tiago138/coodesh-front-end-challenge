@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  //gap: 10px;
   width: 560px;
   height: 39px;
   margin-bottom: 20px;
@@ -13,7 +12,6 @@
   background-color: $nord4;
   list-style-type: none;
   font-weight: 600;
-  //font-size: 16px;
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -48,5 +46,5 @@
 }
 
 .paginate__active {
-  color: #b48ead;
+  color: $nord15;
 }

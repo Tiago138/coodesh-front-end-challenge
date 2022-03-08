@@ -33,7 +33,7 @@
 
     span {
       font-weight: 400;
-      color: #2e3440;
+      color: $nord0;
     }
   }
 }
@@ -49,10 +49,10 @@
 
 .male {
   box-shadow: 0px 3px 12px rgba(94, 129, 172, 0.9);
-  border: 3px solid #5e81ac;
+  border: 3px solid $nord10;
 }
 
 .female {
   box-shadow: 0px 3px 12px rgba(180, 142, 173, 0.9);
-  border: 3px solid #b48ead;
+  border: 3px solid $nord15;
 }
