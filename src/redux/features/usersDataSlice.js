@@ -1,34 +1,21 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-export const getUsersData = createAsyncThunk(
-  "usersData/getUsersData",
-  async () => {
-    return fetch(
-      "https://randomuser.me/api/?page=5&results=50&seed=abc&noinfo"
-    ).then((res) => res.json());
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   usersData: {},
-  loading: false,
   filter: "",
   filterGender: 0,
   user: {},
   showModal: false,
-};
-
-const extraReducers = {
-  [getUsersData.fulfilled]: (state, action) => {
-    state.usersData = action.payload;
-  },
+  currentPage: 1,
 };
 
 export const usersDataSlice = createSlice({
   name: "usersData",
   initialState,
-  extraReducers,
   reducers: {
+    setUsersData: (state, action) => {
+      state.usersData = action.payload;
+    },
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
@@ -43,11 +30,20 @@ export const usersDataSlice = createSlice({
     setShowModal: (state, action) => {
       state.showModal = action.payload;
     },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setFilter, setFilterGender, getUser, setShowModal } =
-  usersDataSlice.actions;
+export const {
+  setUsersData,
+  setFilter,
+  setFilterGender,
+  getUser,
+  setShowModal,
+  setCurrentPage,
+} = usersDataSlice.actions;
 
 export default usersDataSlice.reducer;
