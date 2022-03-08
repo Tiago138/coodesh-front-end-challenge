@@ -1,10 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import "./UserModal.scss";
 
 function UserModal(props) {
-  const dispatch = useDispatch();
-
   const { user, currentPage } = useSelector((state) => state.usersData);
 
   const date = new Date(user.dob.date);
