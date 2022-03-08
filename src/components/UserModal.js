@@ -63,6 +63,11 @@ function UserModal() {
             </span>
           </p>
         </div>
+        {user.id.name && (
+          <p>
+            {user.id.name}: <span>{user.id.value}</span>
+          </p>
+        )}
       </div>
     </div>
   );
