@@ -3,8 +3,6 @@ import { setFilterGender } from "../redux/features/usersDataSlice";
 import TableRow from "./TableRow";
 
 function Table() {
-  console.log("render table");
-
   const { usersData, filter, filterGender } = useSelector(
     (state) => state.usersData
   );

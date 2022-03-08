@@ -1,22 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setShowModal } from "../redux/features/usersDataSlice";
 
 import "./UserModal.scss";
 
-function UserModal() {
+function UserModal(props) {
   const dispatch = useDispatch();
 
-  const { user } = useSelector((state) => state.usersData);
-  console.log(user);
+  const { user, currentPage } = useSelector((state) => state.usersData);
 
   const date = new Date(user.dob.date);
 
   return (
     <div>
-      <span
-        className="overlay"
-        onClick={() => dispatch(setShowModal(false))}
-      ></span>
+      <span className="overlay" onClick={props.func}></span>
       <div
         className="container__user__modal"
         style={
@@ -68,6 +63,12 @@ function UserModal() {
             {user.id.name}: <span>{user.id.value}</span>
           </p>
         )}
+        <p>
+          Link:{" "}
+          <span>
+            http://localhost:3000/user/{currentPage},{user.login.uuid}
+          </span>
+        </p>
       </div>
     </div>
   );
