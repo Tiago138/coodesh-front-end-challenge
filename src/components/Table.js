@@ -45,6 +45,7 @@ function Table() {
       case 2:
         arr = usersData.results.filter((user) => user.gender === "female");
         break;
+      default:
     }
 
     return arr;
