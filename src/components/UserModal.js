@@ -62,7 +62,7 @@ function UserModal(props) {
           </p>
         )}
         <p>
-          Link:
+          Link:{" "}
           <span>
             {process.env.REACT_APP_HOST}user/{currentPage},{user.login.uuid}
           </span>
