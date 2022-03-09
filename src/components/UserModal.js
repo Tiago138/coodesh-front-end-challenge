@@ -64,7 +64,8 @@ function UserModal(props) {
         <p>
           Link:{" "}
           <span>
-            http://localhost:3000/user/{currentPage},{user.login.uuid}
+            https://pharma-inc-challenge.vercel.app/{currentPage},
+            {user.login.uuid}
           </span>
         </p>
       </div>
