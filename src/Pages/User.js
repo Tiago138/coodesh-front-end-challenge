@@ -24,24 +24,24 @@ function User() {
   );
 
   useEffect(() => {
+    const fetchUserData = async (page) => {
+      const res = await fetch(
+        `https://randomuser.me/api/?page=${page}&results=50&seed=abc&noinfo`
+      );
+      const data = await res.json();
+      dispatch(setUsersData(data));
+    };
+
     fetchUserData(userArr[0]);
     dispatch(setCurrentPage(parseInt(userArr[0])));
-  }, []);
+  }, [dispatch, userArr]);
 
   useEffect(() => {
     if (usersData.results) {
       dispatch(getUser(userArr[1]));
       dispatch(setShowModal(true));
     }
-  }, [usersData]);
-
-  const fetchUserData = async (page) => {
-    const res = await fetch(
-      `https://randomuser.me/api/?page=${page}&results=50&seed=abc&noinfo`
-    );
-    const data = await res.json();
-    dispatch(setUsersData(data));
-  };
+  }, [usersData, dispatch, userArr]);
 
   function closeModal() {
     navigate("/");

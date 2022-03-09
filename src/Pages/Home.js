@@ -19,16 +19,16 @@ function User() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchUserData(currentPage);
-  }, [currentPage]);
+    const fetchUserData = async (page) => {
+      const res = await fetch(
+        `https://randomuser.me/api/?page=${page}&results=50&seed=abc&noinfo`
+      );
+      const data = await res.json();
+      dispatch(setUsersData(data));
+    };
 
-  const fetchUserData = async (page) => {
-    const res = await fetch(
-      `https://randomuser.me/api/?page=${page}&results=50&seed=abc&noinfo`
-    );
-    const data = await res.json();
-    dispatch(setUsersData(data));
-  };
+    fetchUserData(currentPage);
+  }, [currentPage, dispatch]);
 
   function handlePageClick(data) {
     dispatch(setCurrentPage(data.selected + 1));
