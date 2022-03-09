@@ -34,14 +34,14 @@ function User() {
 
     fetchUserData(userArr[0]);
     dispatch(setCurrentPage(parseInt(userArr[0])));
-  }, [dispatch, userArr]);
+  }, []);
 
   useEffect(() => {
     if (usersData.results) {
       dispatch(getUser(userArr[1]));
       dispatch(setShowModal(true));
     }
-  }, [usersData, dispatch, userArr]);
+  }, [usersData]);
 
   function closeModal() {
     navigate("/");
